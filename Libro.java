@@ -6,7 +6,7 @@
  * una biblioteca
  * 
  * @author Miguel Bayon 
- * @version 1.0
+ * @version 1.2
  */
 public class Libro {
 
