@@ -24,11 +24,19 @@ public class Libro {
     }
     
     public String getAutor () {
-    return autor;
+        return autor;
     }
     
     public String getTitulo () {
-    return titulo;
+        return titulo;
+    }
+    
+    public void imprimeAutor() {
+        System.out.println("El autor del libro: " + autor);
+    }
+    
+    public void imprimeTitulo() {
+        System.out.println("El titulo del libro: " + titulo);
     }
 }
 
