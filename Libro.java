@@ -13,6 +13,7 @@ public class Libro {
     private String autor;
     private String titulo;
     private int numeroPaginas;
+    private String numeroReferencia;
 
     /**
      * Fija el autor y el titulo del libro a los dados como parametro
@@ -22,6 +23,7 @@ public class Libro {
         autor = autorLibro;
         titulo = tituloLibro;
         numeroPaginas = numeroPaginasLibro;
+        numeroReferencia = "";
     }
     
     public String getAutor () {
@@ -50,7 +52,20 @@ public class Libro {
     
     public String getdetalles() {
         String detalles;
-        detalles = "Título: " + titulo + ", Autor: " + autor + ", Páginas: " + numeroPaginas;
+        detalles = "Título: " + titulo + ", Autor: " + autor + ", Páginas: " + numeroPaginas + ", Numero de referencia: " + numeroReferencia;
         return detalles;
+    }
+    
+    public String getNumeroReferencia() {
+        return numeroReferencia;
+    }
+    
+    public void setNumeroReferencia(String introducirNumeroReferencia) {
+        if (introducirNumeroReferencia.length() >= 3) {
+            numeroReferencia = introducirNumeroReferencia;
+        }
+        else {
+            System.out.println("Error: Numero de referencia no valido");
+        }
     }
 }
