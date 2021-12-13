@@ -14,6 +14,7 @@ public class Libro {
     private String titulo;
     private int numeroPaginas;
     private String numeroReferencia;
+    private int vecesPrestado;
 
     /**
      * Fija el autor y el titulo del libro a los dados como parametro
@@ -24,6 +25,7 @@ public class Libro {
         titulo = tituloLibro;
         numeroPaginas = numeroPaginasLibro;
         numeroReferencia = "";
+        vecesPrestado = 0;
     }
     
     public String getAutor () {
@@ -47,12 +49,12 @@ public class Libro {
     }
     
     public void imprimirDetalles() {
-        System.out.println("Título: " + titulo + ", Autor: " + autor + ", Páginas: " + numeroPaginas);
+        System.out.println("Título: " + titulo + ", Autor: " + autor + ", Páginas: " + numeroPaginas + ", Numero de referencia: " + numeroReferencia + ", Veces Prestado: " + vecesPrestado);
     }
     
     public String getdetalles() {
         String detalles;
-        detalles = "Título: " + titulo + ", Autor: " + autor + ", Páginas: " + numeroPaginas + ", Numero de referencia: " + numeroReferencia;
+        detalles = "Título: " + titulo + ", Autor: " + autor + ", Páginas: " + numeroPaginas + ", Numero de referencia: " + numeroReferencia + ", Veces Prestado: " + vecesPrestado;
         return detalles;
     }
     
@@ -67,5 +69,13 @@ public class Libro {
         else {
             System.out.println("Error: Numero de referencia no valido");
         }
+    }
+    
+    public void prestar (){
+        vecesPrestado = vecesPrestado + 1;
+    }
+    
+    public int getVecesPrestado(){
+        return vecesPrestado;
     }
 }
