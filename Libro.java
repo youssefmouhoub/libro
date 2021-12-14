@@ -15,17 +15,19 @@ public class Libro {
     private int numeroPaginas;
     private String numeroReferencia;
     private int vecesPrestado;
+    private boolean esLibroDeTexto;
 
     /**
      * Fija el autor y el titulo del libro a los dados como parametro
      */
-    public Libro(String autorLibro, String tituloLibro, int numeroPaginasLibro)
+    public Libro(String autorLibro, String tituloLibro, int numeroPaginasLibro, boolean libroDeTexto)
     {
         autor = autorLibro;
         titulo = tituloLibro;
         numeroPaginas = numeroPaginasLibro;
         numeroReferencia = "";
         vecesPrestado = 0;
+        esLibroDeTexto = libroDeTexto;
     }
     
     public String getAutor () {
@@ -49,12 +51,34 @@ public class Libro {
     }
     
     public void imprimirDetalles() {
-        System.out.println("Título: " + titulo + ", Autor: " + autor + ", Páginas: " + numeroPaginas + ", Numero de referencia: " + numeroReferencia + ", Veces Prestado: " + vecesPrestado);
+        String esDeTexto;
+        esDeTexto = "Sí";
+        
+        if (esLibroDeTexto == true){
+            esDeTexto = "Sí";
+        }
+        
+        else {
+            esDeTexto = "No";
+        }
+
+        System.out.println("Título: " + titulo + ", Autor: " + autor + ", Páginas: " + numeroPaginas + ", Numero de referencia: " + numeroReferencia + ", Veces Prestado: " + vecesPrestado +  ", Es libro de texto: " + esDeTexto);
     }
     
     public String getdetalles() {
+        String esDeTexto;
+        esDeTexto = "Sí";
+        
+        if (esLibroDeTexto == true){
+            esDeTexto = "Sí";
+        }
+        
+        else {
+            esDeTexto = "No";
+        }
+        
         String detalles;
-        detalles = "Título: " + titulo + ", Autor: " + autor + ", Páginas: " + numeroPaginas + ", Numero de referencia: " + numeroReferencia + ", Veces Prestado: " + vecesPrestado;
+        detalles = "Título: " + titulo + ", Autor: " + autor + ", Páginas: " + numeroPaginas + ", Numero de referencia: " + numeroReferencia + ", Veces Prestado: " + vecesPrestado + ", Es libro de texto: " + esDeTexto;
         return detalles;
     }
     
@@ -77,5 +101,9 @@ public class Libro {
     
     public int getVecesPrestado(){
         return vecesPrestado;
+    }
+    
+    public boolean getEsLibroDeTexto(){
+        return esLibroDeTexto;
     }
 }
